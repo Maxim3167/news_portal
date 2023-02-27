@@ -8,11 +8,12 @@ import jakarta.servlet.http.HttpServletResponse;
 import myProject.web.dto.NewsDto;
 import myProject.web.service.NewsService;
 import myProject.web.util.JspHelp;
+import myProject.web.util.UrlPath;
 
 import java.io.IOException;
 import java.util.Optional;
 
-@WebServlet("/newsText/*")
+@WebServlet(UrlPath.NEWS_TEXT + "/*")
 public class NewsTextServlet extends HttpServlet {
     private static final NewsTextServlet INSTANCE = new NewsTextServlet();
     private final NewsService newsService = NewsService.getInstance();

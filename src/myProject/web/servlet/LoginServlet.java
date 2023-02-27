@@ -10,11 +10,12 @@ import myProject.validator.Error;
 import myProject.web.model.User;
 import myProject.web.service.UserService;
 import myProject.web.util.JspHelp;
+import myProject.web.util.UrlPath;
 
 import java.io.IOException;
 import java.util.Optional;
 
-@WebServlet("/myLogin")
+@WebServlet(UrlPath.LOGIN)
 public class LoginServlet extends HttpServlet {
     private final UserService userService = UserService.getInstance();
     private static final LoginServlet INSTANCE = new LoginServlet();

@@ -10,10 +10,11 @@ import myProject.exception.ValidationException;
 import myProject.web.dto.NewUserDto;
 import myProject.web.service.UserService;
 import myProject.web.util.JspHelp;
+import myProject.web.util.UrlPath;
 
 import java.io.IOException;
 
-@WebServlet("/myRegistration")
+@WebServlet(UrlPath.REGISTRATION)
 public class RegistrationServlet extends HttpServlet {
     private final UserService userService = UserService.getInstance();
     private static final RegistrationServlet INSTANCE = new RegistrationServlet();

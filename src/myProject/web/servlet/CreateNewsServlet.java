@@ -11,10 +11,11 @@ import myProject.web.dto.NewsDto;
 import myProject.web.model.User;
 import myProject.web.service.NewsService;
 import myProject.web.util.JspHelp;
+import myProject.web.util.UrlPath;
 
 import java.io.IOException;
 
-@WebServlet("/createNews")
+@WebServlet(UrlPath.CREATE_NEWS)
 public class CreateNewsServlet extends HttpServlet {
     private final NewsService newsService = NewsService.getInstance();
     private static final CreateNewsServlet INSTANCE = new CreateNewsServlet();

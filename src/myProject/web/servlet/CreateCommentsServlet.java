@@ -10,10 +10,11 @@ import myProject.exception.CensorshipException;
 import myProject.web.dto.CommentsDto;
 import myProject.web.model.User;
 import myProject.web.service.CommentsService;
+import myProject.web.util.UrlPath;
 
 import java.io.IOException;
 
-@WebServlet("/createComments")
+@WebServlet(UrlPath.CREATE_COMMENT)
 public class CreateCommentsServlet extends HttpServlet {
     private static final CreateCommentsServlet INSTANCE = new CreateCommentsServlet();
     private final CommentsService commentsService = CommentsService.getInstance();

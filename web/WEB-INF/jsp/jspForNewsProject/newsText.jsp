@@ -24,7 +24,7 @@
 </ul>
 
 
-<button type="button"><a href="${pageContext.request.contextPath}/updateNews?newsId=${requestScope.news.id}">Edit news</a></button>
+<%--<button type="button"><a href="${pageContext.request.contextPath}/updateNews?newsId=${requestScope.news.id}">Edit news</a></button> --%>
 
 <form method="post" action="${pageContext.request.contextPath}/createComments?newsId=${requestScope.news.id}">
     Комментарий:<label for="idText">

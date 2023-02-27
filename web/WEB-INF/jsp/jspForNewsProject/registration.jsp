@@ -36,7 +36,6 @@
 
         Role:<label>
             <select name="role">
-                <option value="MODERATOR">MODERATOR</option>
                 <option value="USER">USER</option>
                 <option value="ADMIN">ADMIN</option>
             </select>
