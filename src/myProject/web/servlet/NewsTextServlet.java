@@ -23,11 +23,17 @@ public class NewsTextServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Optional<NewsDto> news = newsService.findById(req.getParameter("newsId"));
+        Optional<NewsDto> news = newsService.findById(req.getParameter("newsId") != null ? req.getParameter("newsId") :
+                String.valueOf(req.getAttribute("newsId")));
         if(news.isPresent()){
             NewsDto newsDto = news.get();
             req.setAttribute("news",newsDto);
         }
         req.getRequestDispatcher(JspHelp.getPath("newsText")).forward(req,resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGet(req,resp);
     }
 }

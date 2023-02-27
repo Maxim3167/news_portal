@@ -7,6 +7,7 @@ import myProject.web.util.ConnectionManager;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.List;
+import java.util.Optional;
 
 public class CommentsDao implements Dao<Integer, Comments> {
     private static final CommentsDao INSTANCE = new CommentsDao();
@@ -39,6 +40,11 @@ public class CommentsDao implements Dao<Integer, Comments> {
     @Override
     public boolean delete(Integer integer) {
         return false;
+    }
+
+    @Override
+    public Optional<Comments> findById(Integer id) {
+        return Optional.empty();
     }
 
     public static CommentsDao getInstance(){

@@ -26,10 +26,7 @@ public class UserService {
     }
 
     public void save(NewUserDto newUserDto) {
-        //необходимо провалидировать полученное значение
-        //смапить в User
-        //передать в дао
-        NewUserValidationResult validationResult = newUserValidator.isValid(newUserDto);
+        NewUserValidationResult validationResult = newUserValidator.isValidUser(newUserDto);
         if(!validationResult.isValid()){
             throw new ValidationException(validationResult.getErrorList());
         }
@@ -37,7 +34,7 @@ public class UserService {
         if(userDao.findByEmailAndPassword(newUserDto.getEmail(), newUserDto.getPassword()).isPresent()){
             throw new DuplicateException();
         }
-        userDao.save(user);
+        userDao.create(user);
 
     }
 }

@@ -13,6 +13,8 @@
 
 </head>
 <body>
+<%@include file="header.jsp"%>
+
 <ul>
    <c:if test="${not empty requestScope.news}">
        <div>
@@ -21,13 +23,24 @@
    </c:if>
 </ul>
 
+
 <button type="button"><a href="${pageContext.request.contextPath}/updateNews?newsId=${requestScope.news.id}">Edit news</a></button>
+
 <form method="post" action="${pageContext.request.contextPath}/createComments?newsId=${requestScope.news.id}">
-    <label for="idText">
+    Комментарий:<label for="idText">
         <input name="comment" type="text" id="idText">
     </label><br>
+    <button type="submit">Добавить комментарий</button>
 </form>
-<button type="submit">Add comment</button>
+
+<ul>
+    <c:if test="${not empty requestScope.error}">
+        <div style="color: red">
+                ${requestScope.error.getErrorText()}
+        </div>
+    </c:if>
+</ul>
+
 
 </body>
 </html>

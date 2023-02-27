@@ -35,12 +35,11 @@ public class CreateCommentsServlet extends HttpServlet {
         try {
             commentsService.create(commentsDto);
         }
-        catch (BanException e){
-            req.setAttribute("error",e.getText());
+        catch (BanException | CensorshipException e){
+            req.setAttribute("error",e);
         }
-        catch (CensorshipException exception){
-            req.setAttribute("error",exception.getVIOLATION());
-        }
+        req.setAttribute("newsId",commentsDto.getNewsId());
+        req.getRequestDispatcher("/newsText/*").forward(req,resp);
 
     }
 }

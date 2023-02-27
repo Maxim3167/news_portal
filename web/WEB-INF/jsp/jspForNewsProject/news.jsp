@@ -12,12 +12,22 @@
 
 </head>
 <body>
+<%@include file="header.jsp"%>
+
 <ul>
         <c:forEach var="news" items="${requestScope.newsDtoList}">
             <li>
                <a href="${pageContext.request.contextPath}/newsText?newsId=${news.id}">Новость:${news.name}</a>
             </li>
         </c:forEach>
+</ul>
+
+<ul>
+    <c:if test="${not empty requestScope.error}">
+        <div style="color: red">
+            ${requestScope.error.getErrorText()}
+        </div>
+    </c:if>
 </ul>
 <button type="button">
     <a href="${pageContext.request.contextPath}/createNews">Создать новость</a></button><br>

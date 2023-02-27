@@ -11,6 +11,7 @@
     <title>Страница создания новости</title>
 </head>
 <body>
+<%@include file="header.jsp"%>
 <form method="post" action="">
 
     Title:<label for="idName">

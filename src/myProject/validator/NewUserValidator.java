@@ -5,16 +5,10 @@ import myProject.web.util.BirthdayFormatter;
 
 import java.time.LocalDate;
 import java.time.Period;
-import java.util.Collection;
-import java.util.Optional;
 
-public class NewUserValidator implements Validator<NewUserDto,NewUserValidationResult>{
+
+public class NewUserValidator implements ValidatorForUser<NewUserDto,NewUserValidationResult> {
     private static final NewUserValidator INSTANCE = new NewUserValidator();
-
-    @Override
-    public NewUserValidationResult isValidComment(NewUserDto userDto) {
-        return null;
-    }
 
     @Override
     public NewUserValidationResult isValidUser(NewUserDto newUserDto) {

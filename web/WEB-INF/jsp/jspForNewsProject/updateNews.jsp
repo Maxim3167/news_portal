@@ -12,6 +12,8 @@
     <title>Страница редактирования новости</title>
 </head>
 <body>
+<%@include file="header.jsp"%>
+
 <form name="updateNews" method="post" action="${pageContext.request.contextPath}/updateNews?newsId=${requestScope.id}">
     New title:<label for="idNewName">
         <input type="text" name="newName" id="idNewName">

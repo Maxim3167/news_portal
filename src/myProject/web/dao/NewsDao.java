@@ -104,6 +104,11 @@ public class NewsDao implements Dao<Integer, News> {
         return false;
     }
 
+    @Override
+    public Optional<News> findById(Integer id) {
+        return Optional.empty();
+    }
+
     public static NewsDao getInstance(){
         return INSTANCE;
     }

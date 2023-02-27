@@ -19,6 +19,8 @@ public class NewUserDtoMapper implements Mapper<NewUserDto, User>{
                 .password(userDto.getPassword())
                 .role(Role.valueOf(userDto.getRole()))
                 .gender(Gender.valueOf(userDto.getGender()))
+                .isBanned(false)
+                .notice(false)
                 .build();
     }
 

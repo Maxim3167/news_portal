@@ -1,6 +1,6 @@
 package myProject.validator;
 
-public class NewCommentsValidationResult {
+public class NewPublicationValidationResult {
     private boolean violation = false;
 
     public void setViolation(boolean violation) {
